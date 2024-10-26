@@ -1,4 +1,10 @@
 package com.fipe.TabelaFipe.Models;
 
-public record Modelos(Integer id, String nome) {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.util.List;
+
+// para retornar somente uma lista dos modelos
+@JsonIgnoreProperties(ignoreUnknown = true)
+public record Modelos(List<Dados> modelos) {
 }
